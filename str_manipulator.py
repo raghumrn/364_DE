@@ -1,12 +1,10 @@
 import configparser
+import threading
 
 from str_reverse import *
 from str_interleave import *
 
 if __name__ == "__main__":
-
-	# reverse_string("ABCDEF")
-	# interleave_string("AAAA","BBBB")
 
 	config_file=r"conf\inputs.cfg"
 
@@ -17,5 +15,9 @@ if __name__ == "__main__":
 	first_string_to_interleave = raw_cfg_parser.get('INPUTS','first_string_to_interleave')
 	second_string_to_interleave = raw_cfg_parser.get('INPUTS','second_string_to_interleave')
 
-	reverse_string(string_to_reverse)
-	interleave_string(first_string_to_interleave,second_string_to_interleave)	
+	t1 = threading.Thread(target=reverse_string, args=(string_to_reverse,))
+	t2 = threading.Thread(target=interleave_string, args=(first_string_to_interleave,second_string_to_interleave))
+	t1.start()
+	t2.start()
+	t1.join()
+	t2.join()
