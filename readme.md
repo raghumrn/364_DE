@@ -25,5 +25,6 @@ Configure your inputs in conf\inputs.cfg  file
 1. doctest
 	* python -m doctest str_reverse.py -v
 	* python -m doctest str_interleave.py -v
+	* python -m pytest --doctest-modules -v
 2. pytest
 	* python -m pytest -v
