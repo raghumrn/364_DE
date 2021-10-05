@@ -28,3 +28,10 @@ Configure your inputs in conf\inputs.cfg  file
 	* python -m pytest --doctest-modules -v
 2. pytest
 	* python -m pytest -v
+
+## How do I generate test coverage report?
+	* pytest coverage 
+		* pytest --cov-report html:cov_html   --cov=str_reverse . 
+	* Unit test coverage
+		* coverage run -m unittest
+		* coverage html
