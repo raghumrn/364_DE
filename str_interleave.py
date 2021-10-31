@@ -1,4 +1,4 @@
-def interleave_string(str1,str2):
+def interleave_string(str1, str2):
 	'''
 	This functions interleaves two strings 
 
